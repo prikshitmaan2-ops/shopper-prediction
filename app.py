@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 # Page configuration
 st.set_page_config(
-    page_title="Shopper Conversion AI",
+    page_title="Shopper Conversion Predictor",
     page_icon="🛍️",
     layout="wide"
 )
@@ -60,7 +60,7 @@ st.markdown("Predict in real time whether an online visitor will **purchase** or
 
 st.divider()
 
-# Layout: 2 Columns (Inputs on the Left, Live AI Results on the Right)
+# Layout: 2 Columns (Inputs on the Left, Live Results on the Right)
 col1, col2 = st.columns([1, 1], gap="large")
 
 with col1:
@@ -121,10 +121,10 @@ shopper_df = pd.DataFrame([{
 buy_prob = model.predict_proba(shopper_df)[0][1] * 100
 
 # ========================================================
-# 3. LIVE AI PREDICTION RESULTS
+# 3. LIVE PREDICTION RESULTS
 # ========================================================
 with col2:
-    st.subheader("🎯 Real-Time AI Prediction")
+    st.subheader("🎯 Real-Time Conversion Forecast")
     
     # Big Metric Card
     st.metric(
@@ -158,4 +158,4 @@ with col2:
         """)
 
     # Model credibility badge
-    st.caption("🤖 Powered by Random Forest Classifier | ROC-AUC: 91.6% | Trained on 12,330 historical sessions")
+    st.caption("📊 Powered by Random Forest Machine Learning Model | ROC-AUC: 91.6% | Trained on 12,330 historical sessions")
